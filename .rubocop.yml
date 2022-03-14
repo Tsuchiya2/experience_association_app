@@ -1,0 +1,68 @@
+# このファイルは加筆編集しないでください。
+require:
+  - rubocop-rails
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'node_modules/**/*'
+    - 'Gemfile'
+    - 'tmp/**/*'
+
+Rails:
+  Enabled: true
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Exclude:
+    - "app/controllers/**/*"
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'config/environments/*'
+
+Style/GlobalStdStream:
+  Exclude:
+    - 'config/environments/*'
+
+Rails/FilePath:
+  Exclude:
+    - 'config/environments/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/RedundantFetchBlock:
+  Exclude:
+    - 'config/puma.rb'
+
+Style/SymbolArray:
+  Exclude:
+    - 'config/initializers/filter_parameter_logging.rb'
+
+Layout/CommentIndentation:
+  Exclude:
+    - 'config/environments/development.rb'
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Exclude:
+    - 'config/environments/production.rb'
+
+Style/StringLiterals:
+  Exclude:
+    - 'config/environments/production.rb'
+
+Layout/LineLength:
+  Exclude:
+    - 'config/initializers/devise.rb'
