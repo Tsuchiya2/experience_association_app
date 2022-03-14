@@ -1,6 +1,8 @@
-<h3>Homes#index</h3>
+<h1>Homes#index</h1>
 
 <% if user_signed_in? %>
-  <p class='m-3'><%= link_to 'Post一覧', posts_path %></p>
-  <p class='m-3'><%= link_to 'Task一覧', '#' %></p>
+  <p class='m-3'><%= link_to 'Post一覧', posts_path %> => Association の活用が薄い=他者のPostも変更・削除可能</p>
+  <p class='m-3'><%= link_to 'Task一覧', tasks_path %> => Association の活用=他者のTaskは変更・削除不可</p>
+<% else %>
+  <p clss='m-3'>ヘッダーから"サインアップ"もしくは"ログイン"を行ってください。</p>
 <% end %>

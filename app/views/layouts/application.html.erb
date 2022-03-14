@@ -28,6 +28,8 @@
     <% elsif alert %>
       <p class='bg-danger text-white'><%= alert %></p>
     <% end %>
-    <%= yield %>
+    <div class='container'>
+      <%= yield %>
+    </div>
   </body>
 </html>
