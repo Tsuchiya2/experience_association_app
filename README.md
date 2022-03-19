@@ -14,7 +14,7 @@ Ruby on Rails のアソシエーションに関して、実際にコンソール
 
 Ruby：2.5.1
 
-Rails：5.2.6c
+Rails：5.2.6
 
 ```bash
 $ git clone git@github.com:Tsuchiya2/experience_association_app.git
@@ -102,4 +102,46 @@ User.find(post.user_id)
 
 ---
 
-## ブラウザ
+## ブラウザでアソシエーションを体験
+
+次はブラウザでアソシエーションを体験してみましょう。ターミナルでサーバー(`bin/rails s`)を立ち上げて、`http://localhost:3000`にアクセスしましょう。
+
+
+Homes#Indexページを表示できたらヘッダーの`ログイン`をクリックし、以下どちらかでログインしましょう。
+
+```
+sample
+  - email: 'sample@example.com'
+  - password: 'passwrod'
+
+test
+  - email: 'test@example.com'
+  - password: 'password'
+```
+
+ログインに成功すると、Homes#Indexページは↓の画像のように変わっているかと思います。
+
+![login](/public/images/login.jpg)
+
+まずは`Post一覧`をクリックし、ログイン中のEmailと同じ"User Email"の投稿を更新・削除してみましょう。難なく投稿を更新・削除できたかと思います。
+
+
+次にログイン中のEmailとは異なる"User Email"の投稿を更新・削除してみましょう。
+
+どうでしょうか？更新を行うと"User Email"も変わってしまったり、他者の投稿を削除できてしまったのではないでしょうか？
+
+![posts](/public/images/posts.jpg)
+（S-No.1のbodyを変更して更新・S-No.2を削除）
+
+app/controllers/posts_controller.rbを確認すると、以下のようになっていますね。先程の`Railsコンソールでアソシエーションを体験`で使用したような記載はありませんよね。(例：post.user.email, user.posts, etc)
+![posts_controller](/public/images/posts_controller.jpg)
+
+今度は`Task一覧`へ移動して、Postの時と同様の操作を行ってみましょう。ログインしている"User Email"以外のTaskを編集・削除しようとするとエラー画面が表示されるかと思います。(`current_user`はgem '[devise](https://github.com/heartcombo/devise)'で用意されているヘルパーメソッドで、現在ログインしているユーザーのレコードを取得できます)
+
+![errors](/public/images/errors.jpg)
+
+app/controllers/tasks_controller.rbを家訓すると以下のようになっていますね。
+
+![tasks_controller](/public/images/tasks_controller.jpg)
+
+先程のapp/controllers/posts_controller.rbと比較すると、所々記載が異なっているかと思うので確認してみましょう。(new, create, set_task, task_paramsにおいて違いがあるかと思うので、何が違っているのか＆どんな挙動になるのかを考えてみましょう)
