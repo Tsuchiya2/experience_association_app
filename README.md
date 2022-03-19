@@ -140,8 +140,16 @@ app/controllers/posts_controller.rbを確認すると、以下のようになっ
 
 ![errors](/public/images/errors.jpg)
 
-app/controllers/tasks_controller.rbを家訓すると以下のようになっていますね。
+app/controllers/tasks_controller.rbを確認すると以下のようになっていますね。
 
 ![tasks_controller](/public/images/tasks_controller.jpg)
 
 先程のapp/controllers/posts_controller.rbと比較すると、所々記載が異なっているかと思うので確認してみましょう。(new, create, set_task, task_paramsにおいて違いがあるかと思うので、何が違っているのか＆どんな挙動になるのかを考えてみましょう)
+
+---
+
+## 最後に
+
+いかがでしたでしょうか？アソシエーションがどんなものなのか、少しでも理解の助けになったら嬉しいです。
+
+最後まで取り組んでいただき、ありがとうございました🐱🐾
